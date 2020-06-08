@@ -15,5 +15,4 @@ Knex,
 Nodemon,
 Insomnia,
 Expo,
-Celebrate,
-jest
+Celebrate
