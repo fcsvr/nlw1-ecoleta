@@ -1,0 +1,209 @@
+
+Passo a Passo - Instalações
+---------------------------
+{
+	- Instalar Chocolatey
+	- Instalar Node.js
+	- Visual Studio Code
+		- Theme Dracula
+		- Material Icon Theme
+	
+	- Terminal - na pasta do projeto
+		BACKEND
+		-------
+		--criar pastar server		
+		(iniciar projeto)
+		- npm init -y
+		(instalar o express - para enterder os caminhos/url da aplicação)
+		- npm install express
+		(instalar apenas os tipos do express para facilitar o desenv)
+		- npm install @types/express -D
+		(instalar pacote para o node entender o TypeScript)
+		- npm install ts-node -D
+		(instalar o TypeScript)
+		- npm install typescript -D
+		(criar arquivo de configuração do TypeScript)
+		- npx tsc --init
+		(executar a aplicação)
+		- npx ts-node src/server.ts
+		(instalar pacote para automaticamente reiniciar o Node quando tiver alterações)
+		- npm install ts-node-dev -D
+		(executar a aplicação com o reload automatico)
+		- npx ts-node-dev src/server.ts
+		(executar a aplicação de forma simples) - colocar antes parametro "dev": "ts-node-dev src/server.ts" no "Scripts" do package.json
+		- npm run dev
+		
+		(instalar package celebrate - validação de dados)
+		- npm install celebrate
+		- npm install @types/hapi__joi -D
+		
+		
+		
+		--Confgigurando a conexão do banco de dados
+		(instalar o knex)
+		- npm install knex
+		(instalar package o sqllite)
+		- npm install sqlite3
+		(executar o migrations)
+		- npx knex migrate:latest --knexfile knexfile.ts migrate:latest
+		(executar o migrations de forma simples) - colocar antes parametro "knex:migrate": "knex migrate:latest --knexfile knexfile.ts migrate:latest" no "Scripts" do package.json
+		- npm run knex:migrate
+		(excutar o seed do migrations)
+		- npm run knex:seed
+			
+		
+		--CORS
+		(instalando o CORS)
+		- npm install cors
+		- npm install @types/cors -D
+		
+		
+		--UPLOAD de Imagens
+		(instalando a extensão multer)
+		- npm install multer
+		- npm install @types/multer -Dados
+		
+		
+				
+		FRONTEND
+		--------
+		(criar projeto do React)
+		- npx create-react-app web --template=typescript
+		(executar script dentro do packaje.json)
+		- npm start
+		
+		- limpeza da solução (remover arquivos)
+		
+		(instalar pacote de icones)
+		- npm install react-icons
+		
+		(instalar package para roteamento de páginas)
+		- npm install react-router-dom
+		- npm install @types/react-router-dom -D
+		
+		(instalar package de mapa)
+		- npm install leaflet react-leaflet
+		- npm install @types/react-leaflet -D
+		
+		(instalar package que permite fazer requisiçoes para o ambiente Node(Backend))
+		- npm install axios
+		
+		(instalar plugin do react dropzone)
+		- npm install react-dropzone
+		
+		MOBILE
+		------
+		(instalar o expo)
+		- npm install -g expo-cli
+		(criar o projeto)
+		- expo init mobile
+		(iniciar projeto)
+		- npm start
+		(instalar o google fonts, fontes Ubuntu e Roboto) - será utilizado o package do expo
+		- expo install expo-font @expo-google-fonts/ubuntu @expo-google-fonts/roboto
+		
+		(instalar package de navegação)
+		- npm install @react-navigation/native
+		- expo install react-native-gesture-handler react-native-reanimated react-native-screens react-native-safe-area-context @react-native-community/masked-view
+		- npm install @react-navigation/stack
+		
+		(instalar extensao de mapas)
+		- expo install react-native-maps
+		
+		(instalar pacote do expo de constantes)
+		- expo install expo-constants
+		
+		(instalar pacote de svg do expo)
+		- expo install react-native-svg
+		
+		(instalar axios)
+		- npm install axios
+		
+		(pegar a localização do usuario)
+		- expo install expo-location
+		
+		(instalar pacote de composição de email)
+		- expo install expo-mail-composer
+		
+		(instalar component se combo/select) - react-native-picker-select
+		- npm install react-native-picker-select
+		
+}
+
+
+CONCEITOS
+---------
+{
+	TypeScript
+	----------
+	- Superset, Javascript com a possibilidade de utizarmos tipagem.
+	- Mitos e Verdades
+		- TypeScript diminui a produtividade - apenas no inicio por costume
+		- TypeScript é a mesma coisa que transformar Javascript em Java ou C# - NÃO, ela apenas adiciona tipagem
+		- O mercado não utiliza TypeScript. Não, o mercado cada vex mais o TypeScript.
+		- o TypeScript substitui o Javascript. NÃO.
+		- TypeScript atrapahlha o iniciante. apenas para que apenas desenv com linguagens não tipadas.
+		
+	
+	React
+	-----
+	- Biblioteca para construção de interfaces visuais
+	- Utilizado para construção de Single-Page Applications
+	- Tudo fica dentro do Javascript/TypeScript
+	- React / ReactJS / React Native
+	
+	Vantagens
+		- Organização do código
+			- componentização
+		- Divisão de responsabilidades
+			- backend: Regra de negocio
+			- frontend: Interface
+		- Uma API, multiplos clientes;
+	
+	Knex
+	----
+	- Biblioteca que permite trabalhar com BD SQL com uma linguagem unificada
+	- Querybuilder
+	- ORM
+		- Migrations
+	
+	
+	CORS
+	----
+	- Define quais urls poderão ter acesso externo
+
+	JSX 
+	---
+	- Sintaxe html/xml dentro do javascript
+	
+	EXPO
+	----
+	- Ferramenta para simular o app de ract native no celular
+	
+	YUP
+	---
+	- Ferramenta para validação de dads no frontend em ReactJS
+	
+	CELEBRATE
+	---------
+	- Ferramenta para validação de dads no backend em NODE.js
+
+}
+
+DEPLOY
+------
+{
+	Backend
+	-------
+		Heroku
+		Digital Ocean
+		AWS / Google Cloud / Microsoft Azure
+	
+	Frontend
+	--------
+		Netlify / Vercel
+		Amazon S3 / Google Cloud Storage
+		
+}
+
+
